@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update XLSX File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="file"],
+        .form-group input[type="text"],
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .form-group button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group button:disabled {
+            background-color: #ccc;
+        }
+        .processing-message {
+            display: none;
+            margin-top: 15px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload XLSX File</h2>
+        <div class="form-group">
+            <label for="fileInput">Select XLSX file:</label>
+            <input type="file" id="fileInput" accept=".xlsx">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumberInput">Enter Phone Number:</label>
+            <input type="text" id="phoneNumberInput" placeholder="Enter your phone number">
+        </div>
+        <div class="form-group">
+            <button id="getTokenButton">Get OTP</button>
+        </div>
+        <div class="form-group">
+            <button id="processButton" disabled>Process File</button>
+        </div>
+        <div class="processing-message" id="processingMessage">Processing, please wait...</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="livelinen_wc_orders.js"></script>
+</body>
+</html>
