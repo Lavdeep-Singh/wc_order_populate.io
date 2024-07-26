@@ -75,8 +75,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    function createSessionId() {
+        const today = new Date();
+        const datePart = today.toISOString().split('T')[0]; // Get the date part in YYYY-MM-DD format
+        const uniquePart = 'livelinen-reconciliation';
+        const sessionId = `${datePart}-${uniquePart}`;
+        return sessionId;
+    }
+
     processButton.addEventListener('click', async () => {
         const token = sessionId;
+
+        sessionId = createSessionId();
 
         if (!token || !file) {
             alert('Please fill all the fields and select a file.');
